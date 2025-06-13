@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>News Bias Analyzer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background-color: #f9f9f9;
+            max-width: 800px;
+            margin: auto;
+        }
+        h1 { color: #333; }
+        textarea { width: 100%; height: 150px; }
+        .result { background: #fff; padding: 20px; margin-top: 20px; border-radius: 8px; }
+    </style>
+</head>
+<body>
+
+<h1>News Bias Analyzer with Gemini AI</h1>
+
+<form method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="form_type" value="file">
+    <label><b>Upload an article file (.txt):</b></label><br>
+    <input type="file" name="fileUpload">
+    <button type="submit">Analyze File</button>
+</form>
+
+<hr>
+
+<form method="POST">
+    <input type="hidden" name="form_type" value="text">
+    <label><b>Paste article text or a news URL:</b></label><br>
+    <textarea name="textInput" placeholder="Enter article text or URL here..."></textarea><br>
+    <button type="submit">Analyze Text/URL</button>
+</form>
+
+{% if prediction %}
+<div class="result">
+    <h2>Predicted Bias: {{ prediction|capitalize }}</h2>
+
+    <h3>Confidence Scores:</h3>
+    <ul>
+        {% for label, score in confidence.items() %}
+            <li><b>{{ label.capitalize() }}</b>: {{ (score * 100) | round(2) }}%</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Gemini AI Explanation:</h3>
+    <p>{{ explanation }}</p>
+</div>
+{% endif %}
+
+</body>
+</html>
