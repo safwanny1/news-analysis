@@ -1,4 +1,4 @@
-# News Article Bias Detection System
+# News Analysis AI
 
 A machine learning-powered web application that automatically detects political bias in news articles using natural language processing and classification techniques.
 
@@ -232,4 +232,8 @@ For questions or issues, please open an issue in the repository or contact the d
 
 ---
 
+<<<<<<< HEAD
 **Note**: This project was developed as part of an AI/ML educational project. Results may vary based on training data and should be used for educational purposes.
+=======
+**Note**: This tool provides computational estimates of bias and should not be considered as definitive political categorization. Always cross-reference with multiple sources and critical thinking when evaluating news content.
+>>>>>>> 806443f7fec0d0ff7ac5da0701b3598d6e716748
