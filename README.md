@@ -1,4 +1,4 @@
-# News Article Bias Detection System
+# News Analysis AI
 
 A machine learning-powered system that analyzes news articles and predicts their political bias orientation (left, right, or neutral). This project uses natural language processing techniques and supervised learning to classify articles based on their content.
 
